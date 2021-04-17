@@ -1,6 +1,7 @@
 import express from 'express'
-import Formidable from 'formidable'
+import Formidable from 'formidable';
 import { addRow } from '../Data_Layer/db'
+
 const app = express();
 const port = 8080; // default port to listen
 
@@ -25,7 +26,7 @@ app.get("/", (req, res) => {
             console.log('Name: ', fields.name);
             console.log('Gender: ', fields.gender);
             console.log('Categories: ', fields.cat);
-            console.log('filePath: ', fields.path);
+            console.log('filePath: ', files["image"]["path"]);
             // console.log('Files', files)
             // console.log(files["image"]["path"])
             // res.send("<div>YOYOYOYO</div>")
@@ -34,7 +35,6 @@ app.get("/", (req, res) => {
             res.send("Complete")
         })
 
-        // databaseQuery();
     })
 
 // start the Express server
