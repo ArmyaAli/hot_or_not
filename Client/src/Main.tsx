@@ -3,35 +3,40 @@ import React from "react";
 const App = () => {
   return (
     <div>
-      <form action="127.0.0.1:8080" method="post">
+      <form action="http://127.0.0.1:8080" method="post" encType="multipart/form-data">
         <div>
           <label>Name: </label>
-          <input type="text" />
+          <input type="text" name="name" />
         </div>
         <div>
           <label>Gender: </label>
-          <select name="" id="">
+          <select name="Gender">
             <option value="M">Male</option>
             <option value="F">Female</option>
             <option value="NB">Non-Binary</option>
           </select>
         </div>
         <div>
-          <label>Category:</label>
+          <label>
+            <b>Categories</b>
+          </label>
           <div>
+            <input type="checkbox" name="cat" value="streamer" />
             <label>Streamer</label>
-            <input type="radio" />
+            <input type="checkbox" name="cat" value="youtuber" />
             <label>Youtubers</label>
-            <input type="radio" />
+            <input type="checkbox" name="cat" value="pornstar" />
             <label>Porn Stars</label>
-            <input type="radio" />
+            <input type="checkbox" name="cat" value="celeb" />
             <label>Celebrities</label>
-            <input type="radio" />
           </div>
         </div>
         <div>
-          <label>Name:</label>
-          <input type="text" />
+          <label>Image: </label>
+          <input type="file" name="image" />
+        </div>
+        <div>
+          <input type="Submit" />
         </div>
       </form>
     </div>
