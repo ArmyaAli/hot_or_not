@@ -21,13 +21,13 @@ const App = () => {
             <b>Categories</b>
           </label>
           <div>
-            <input type="checkbox" name="cat" value="streamer" />
+            <input type="checkbox"  name="cat[]" value="Streamer"/>
             <label>Streamer</label>
-            <input type="checkbox" name="cat" value="youtuber" />
+            <input type="checkbox"  name="cat[]" value="Youtubers"/>
             <label>Youtubers</label>
-            <input type="checkbox" name="cat" value="pornstar" />
+            <input type="checkbox"  name="cat[]" value="Porn Stars"/>
             <label>Porn Stars</label>
-            <input type="checkbox" name="cat" value="celeb" />
+            <input type="checkbox"  name="cat[]" value="Celebrities"/>
             <label>Celebrities</label>
           </div>
         </div>
