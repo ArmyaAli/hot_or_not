@@ -10,7 +10,7 @@ const App = () => {
         </div>
         <div>
           <label>Gender: </label>
-          <select name="Gender">
+          <select name="gender">
             <option value="M">Male</option>
             <option value="F">Female</option>
             <option value="NB">Non-Binary</option>
