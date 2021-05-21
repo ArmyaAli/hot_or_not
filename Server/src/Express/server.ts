@@ -6,7 +6,6 @@ const app = express();
 const port = 8080; // default port to listen
 
 // define a route handler for the default home page
-
 app.get("/", (req, res) => {
     res.send("Express Backend");
 })
@@ -23,15 +22,23 @@ app.get("/", (req, res) => {
                 console.error('Error', err)
                 throw err
             }
+
             console.log('Name: ', fields.name);
             console.log('Gender: ', fields.gender);
-            console.log('Categories: ', fields.cat);
+
+            const catLen = Object.keys(fields).length - 2;
+            const catArray = [];
+
+            for (let i = 0; i < catLen + 1; ++i) {
+                if (fields['cat' + `${i}`] !== undefined) {
+                    catArray.push(fields['cat' + `${i}`])
+                }
+            }
+            console.log('Categories: ', catArray.join(', '));
+
             console.log('filePath: ', files["image"]["path"]);
-            // console.log('Files', files)
-            // console.log(files["image"]["path"])
-            // res.send("<div>YOYOYOYO</div>")
-            // addRow()
-            // res.sendFile(files["image"]["path"])
+            addRow({ name: fields.name as string, gender: fields.gender as string, categories: catArray, filePath: files["image"]["path"] })
+            
             res.send("Complete")
         })
 
