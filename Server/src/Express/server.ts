@@ -1,13 +1,20 @@
 import express from 'express'
 import Formidable from 'formidable';
-import { addRow } from '../Data_Layer/db'
+import { addRow, readPeople, People } from '../Data_Layer/db'
+const _cors = require('cors');
 
-const app = express();
 const port = 8080; // default port to listen
+const app = express();
+
+app.use(_cors())
 
 // define a route handler for the default home page
-app.get("/", (req, res) => {
-    res.send("Express Backend");
+app.get("/", async (req, res) => {
+    readPeople(res).then((value) => {
+        console.log('completed')
+        res.send(value["data"][1].filePath)
+    })
+        .catch((error) => console.log(error))
 })
     .post("/", (req, res) => {
         const formidable = new Formidable.IncomingForm({
@@ -38,7 +45,7 @@ app.get("/", (req, res) => {
 
             console.log('filePath: ', files["image"]["path"]);
             addRow({ name: fields.name as string, gender: fields.gender as string, categories: catArray, filePath: files["image"]["path"] })
-            
+
             res.send("Complete")
         })
 
@@ -48,3 +55,7 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
     console.log(`server started at http://localhost:${port}`);
 });
+
+function cors(): import("express-serve-static-core").RequestHandler<import("express-serve-static-core").ParamsDictionary, any, any, import("qs").ParsedQs, Record<string, any>> {
+    throw new Error('Function not implemented.');
+}

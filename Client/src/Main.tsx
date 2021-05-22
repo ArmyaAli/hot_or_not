@@ -1,9 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const App = () => {
+  const [imgSrc, setImgSrc] = useState();
+  
+  const hitEndpoint = async () => {
+    const response = await axios
+      .get("http://localhost:8080")
+      .then(function (response) {
+        console.log(response);
+        setImgSrc(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+  useEffect(() => {
+    hitEndpoint();
+  }, []);
+
   return (
     <div>
-      <form action="http://127.0.0.1:8080" method="post" encType="multipart/form-data">
+      <img src={imgSrc} width="100px" height="100px" alt="" />
+      <form
+        action="http://127.0.0.1:8080"
+        method="post"
+        encType="multipart/form-data"
+      >
         <div>
           <label>Name: </label>
           <input type="text" name="name" />
@@ -21,13 +44,13 @@ const App = () => {
             <b>Categories</b>
           </label>
           <div>
-            <input type="checkbox"  name="cat0" value="Streamers"/>
+            <input type="checkbox" name="cat0" value="Streamers" />
             <label>Streamer</label>
-            <input type="checkbox"  name="cat1" value="Youtubers"/>
+            <input type="checkbox" name="cat1" value="Youtubers" />
             <label>Youtubers</label>
-            <input type="checkbox"  name="cat2" value="Porn Stars"/>
+            <input type="checkbox" name="cat2" value="Porn Stars" />
             <label>Porn Stars</label>
-            <input type="checkbox"  name="cat3" value="Celebrities"/>
+            <input type="checkbox" name="cat3" value="Celebrities" />
             <label>Celebrities</label>
           </div>
         </div>
