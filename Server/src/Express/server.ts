@@ -1,8 +1,8 @@
 import express from 'express'
 import Formidable from 'formidable';
 import { addRow, readPeople, People } from '../Data_Layer/db'
-const _cors = require('cors');
 
+const _cors = require('cors');
 const port = 8080; // default port to listen
 const app = express();
 
@@ -12,9 +12,16 @@ app.use(_cors())
 app.get("/", async (req, res) => {
     readPeople(res).then((value) => {
         console.log('completed')
-        res.send(value["data"][1].filePath)
-    })
-        .catch((error) => console.log(error))
+        res.set('Content-Type', 'text/html');
+        let requestedImages = ""
+        value["data"].forEach(element => {
+            const path = "http://127.0.0.1:8887/" + element.filePath.split('\\')[8]
+            if(/(.jpg|.png|.jpeg|.gif)$/.test(path))
+                requestedImages += `<div>\n<p>${element.name}</p>\n<p>${element.gender}</p>\n<p>${element.categories}</p>\n<img style="margin:8px;" src="${path}"height="100px" width='100px'/>
+                </div>`
+        });
+        res.send(requestedImages);
+    }).catch((error) => console.log(error))
 })
     .post("/", (req, res) => {
         const formidable = new Formidable.IncomingForm({
@@ -56,6 +63,3 @@ app.listen(port, () => {
     console.log(`server started at http://localhost:${port}`);
 });
 
-function cors(): import("express-serve-static-core").RequestHandler<import("express-serve-static-core").ParamsDictionary, any, any, import("qs").ParsedQs, Record<string, any>> {
-    throw new Error('Function not implemented.');
-}
