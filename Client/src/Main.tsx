@@ -1,27 +1,30 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import ReactHtmlParser from 'react-html-parser';
+
 
 const App = () => {
-  const [imgSrc, setImgSrc] = useState();
+  const [img, setImg] = useState<string>();
   
   const hitEndpoint = async () => {
     const response = await axios
       .get("http://localhost:8080")
       .then(function (response) {
         console.log(response);
-        setImgSrc(response.data);
+        setImg(response.data);
       })
       .catch(function (error) {
         console.log(error);
       });
   };
+
   useEffect(() => {
     hitEndpoint();
   }, []);
 
   return (
     <div>
-      <img src={imgSrc} width="100px" height="100px" alt="" />
+      {ReactHtmlParser(img!)}
       <form
         action="http://127.0.0.1:8080"
         method="post"
