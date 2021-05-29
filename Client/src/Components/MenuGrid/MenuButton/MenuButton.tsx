@@ -1,12 +1,13 @@
-import React from 'react'
+import React from "react";
+import "./MenuButton.css";
 
 export interface ButtonProps {
-    Text: string;
+  Text: string;
 }
 export const MenuButton = (props: ButtonProps) => {
-    return (
-    <div>
-        <button>{props.Text}</button>
+  return (
+    <div className="button-wrapper">
+      <button>{props.Text}</button>
     </div>
-    )
-}
+  );
+};

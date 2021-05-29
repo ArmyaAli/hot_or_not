@@ -1,0 +1,15 @@
+.button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 144px;
+  max-width: 256px;
+  height: 32px;
+  background-color: lightpink;
+  margin: 4px;
+}
+
+button {
+  border-radius: 12px;
+  padding: 4px;
+}
