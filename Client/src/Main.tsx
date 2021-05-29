@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import { MenuPage } from "./Pages/MenuPage";
 import { SubmissionPage } from "./Pages/SubmissionPage";
 
