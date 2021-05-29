@@ -6,7 +6,7 @@ export const SubmissionPage = () => {
   const [img, setImg] = useState<string>();
   
   const hitEndpoint = async () => {
-    const response = await axios
+    await axios
       .get("http://localhost:8080")
       .then(function (response) {
         console.log(response);
