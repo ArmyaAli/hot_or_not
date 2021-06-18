@@ -9,6 +9,7 @@
 
 .button {
     padding: 4px;
+    font-weight: bold;
 }
 
 .button-wrapper {
@@ -21,4 +22,44 @@
     width: 256px;
     height: 32px;
     background-color: lightpink;
+    border-radius: 4px;
+} 
+
+.lg-view{
+    display:inline-block;
+ }
+ 
+ .sm-view{
+    display:none;
+ }
+
+@media only screen and (max-width: 800px) {
+    .button-wrapper {
+        width: 192px;
+        margin: 12px;
+    }
+    .content-wrapper{
+        height: 270px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .button-wrapper {
+        width: 64px;
+        margin: 16px;
+    }
+    .button {
+        display: none;
+    }
+    .content-wrapper{
+        height: 270px;
+    }
+
+    .lg-view{
+        display:none;
+     }
+ 
+     .sm-view{
+        display:inline-block;
+     }
 }
