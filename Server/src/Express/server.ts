@@ -1,6 +1,6 @@
 import express from 'express'
 import Formidable from 'formidable';
-import { addRow, readPeople, People } from '../Data_Layer/db'
+import { addRow, readPeople } from '../Data_Layer/db'
 
 const _cors = require('cors');
 const port = 8080; // default port to listen

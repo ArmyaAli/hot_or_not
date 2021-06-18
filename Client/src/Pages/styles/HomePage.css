@@ -1,0 +1,14 @@
+.content-wrapper {
+    width: 100%;
+    height: 540px;
+    background-color: #FF69B4;
+}
+
+.mid {
+    background-color: #D95FB1;
+    height: 720px;
+}
+
+.bot {
+    background-color: #B255AD;
+}

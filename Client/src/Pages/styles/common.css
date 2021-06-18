@@ -6,6 +6,14 @@ html,
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 /** GLOBAL TAILWIND STYLES CAN APPLIED HERE https://tailwindcss.com/docs/extracting-components **/

@@ -1,20 +1,67 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBackward, faHome, faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import {
+  BrowserRouter as Router,
+  Link,
+  useLocation,
+  useHistory
+} from "react-router-dom";
 import "./Navbar.css";
 
+/** 
+ * Navbar should check what the current route is
+ * After the current route is checked, can dynamically show buttons
+ * If HomePage -> Don't Show homepage
+ *             -> Don't Show backbutton
+ *             -> Show Categories Button/Menu
+ *             -> Show Add Person Button 
+ * 
+ * **/
+
+
 export const Navbar = () => {
+  let location = useLocation();
+  let history = useHistory();
+
+  const backClickHandler = () => {
+    history.goBack();
+  }
+
+  // if (location.pathname == '/') {
+  //   return (
+  //     <nav>
+  //         <div className="button-wrapper rounded-sm hover:bg-gray-500 cursor-pointer">
+  //           <button className="button h-12">Add Person</button>
+  //         </div>
+  //     </nav>
+  //   )
+  // }
+
   return (
     <nav>
       <div className="nav-wrapper">
-        <div className="back-button-wrapper bg-gray-50 rounded-sm hover:bg-gray-500 cursor-pointer">
-          <button className="back-button h-12">Go Back</button>
+        <div onClick={backClickHandler} className="button-wrapper rounded-md hover:animate-pulse text-purple-400 cursor-pointer">
+          <button className="button h-12">Go Back {"   "}
+            <FontAwesomeIcon icon={faBackward} size="lg" />
+          </button>
         </div>
-        <div className="home-button-wrapper bg-gray-50 rounded-sm hover:bg-gray-500 cursor-pointer">
-          <button className="home-button h-12 ">Home Page</button>
-        </div>
-        <div className="add-person-button-wrapper bg-gray-50 rounded-sm hover:bg-gray-500 cursor-pointer">
-          <button className="add-person-button h-12">Add Person</button>
-        </div>
+        <Link to="/">
+          <div className="button-wrapper rounded-md hover:animate-pulse text-purple-400 cursor-pointer">
+            <button className="button h-12">Home {"  "}
+              <FontAwesomeIcon icon={faHome} size="lg" className="" />
+            </button>
+          </div>
+        </Link>
+        <Link to="/submission">
+          <div className="button-wrapper rounded-md hover:animate-pulse text-purple-400 cursor-pointer">
+            <button className="button h-12">Add Person {"   "}
+              <FontAwesomeIcon icon={faUserPlus} size="lg" />
+            </button>
+          </div>
+        </Link>
       </div>
     </nav>
+
   );
 };
