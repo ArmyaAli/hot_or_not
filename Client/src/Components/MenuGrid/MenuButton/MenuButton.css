@@ -4,22 +4,22 @@
     justify-content: center;
     width: 256px;
     height: 64px;
-    border-radius: 4px;
+    border-radius: 6px;
     margin: 8px;
-    background-color: #D95FB1;
-    color: pink;
+    color: white;
     font-size: 24px;
+    background-color: #FF69B4;
 }
 
 .menu-button-wrapper:hover {
-    background-color: #FF69B4;
     cursor: pointer;
+    background-color: #D95FB1;
 }
 
 @media only screen and (min-width: 800px) {
     .menu-button-wrapper {
         width: 512px;
-        height: 256px;
+        height: 144px;
         font-size: 48px;
     }
 }
