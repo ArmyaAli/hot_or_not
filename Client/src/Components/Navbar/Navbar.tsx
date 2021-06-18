@@ -43,23 +43,26 @@ export const Navbar = () => {
       <div className="nav-wrapper">
         <Link to={location.pathname}>
           <div onClick={backClickHandler} className="button-wrapper rounded-md hover:animate-pulse text-purple-400 cursor-pointer">
-            <button className="button">Go Back {"   "}
+            <button className="button lg-view">Go Back {"   "}
               <FontAwesomeIcon icon={faBackward} size="lg" />
             </button>
+              <FontAwesomeIcon icon={faBackward} size="lg" className="sm-view"/>
           </div>
         </Link>
         <Link to="/">
           <div className="button-wrapper rounded-md hover:animate-pulse text-purple-400 cursor-pointer">
-            <button className="button">Home {"  "}
-              <FontAwesomeIcon icon={faHome} size="lg" className="" />
+            <button className="button lg-view">Home {"  "}
+              <FontAwesomeIcon icon={faHome} size="lg"/>
             </button>
+            <FontAwesomeIcon icon={faHome} size="lg" className="sm-view"/>
           </div>
         </Link>
         <Link to="/submission">
-          <div className="button-wrapper rounded-md hover:animate-pulse text-purple-400 cursor-pointer">
-            <button className="button">Add Person {"   "}
-              <FontAwesomeIcon icon={faUserPlus} size="lg" />
+        <div className="button-wrapper rounded-md hover:animate-pulse text-purple-400 cursor-pointer">
+            <button className="button lg-view">Add Person {"  "}
+              <FontAwesomeIcon icon={faUserPlus} size="lg"/>
             </button>
+            <FontAwesomeIcon icon={faUserPlus} size="lg" className="sm-view"/>
           </div>
         </Link>
       </div>
