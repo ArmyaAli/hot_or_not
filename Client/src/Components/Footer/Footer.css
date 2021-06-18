@@ -4,76 +4,84 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-  }
+}
 
 .footer-main {
-  padding: 1.25rem 1.875rem;
-  display: flex;
-  flex-wrap: wrap;
+    padding: 1.25rem 1.875rem;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-@media only screen and (min-width: 29.8125rem /* 477px */) {
-  .footer-main {
-    justify-content: space-evenly;
-  }
+@media only screen and (min-width: 29.8125rem
+/* 477px */
+
+) {
+    .footer-main {
+        justify-content: space-evenly;
+    }
 }
 
-@media only screen and (min-width: 77.5rem /* 1240px */) {
-  .footer-main {
-    justify-content: space-evenly;
-  }
+@media only screen and (min-width: 77.5rem
+/* 1240px */
+
+) {
+    .footer-main {
+        justify-content: space-evenly;
+    }
 }
+
 .footer-main-item {
-  padding: 1.25rem;
-  min-width: 12.5rem;
+    padding: 1.25rem;
+    min-width: 12.5rem;
 }
 
 .footer-title {
-  color: pink;
+    color: pink;
 }
 
 .footer-social {
-  padding: 0 1.875rem 1.25rem;
+    padding: 0 1.875rem 1.25rem;
 }
 
 .footer-social-list {
-  display: flex;
-  justify-content: center;
-  border-top: 2px pink solid;
-  padding-top: 1.25rem;
+    display: flex;
+    justify-content: center;
+    border-top: 2px pink solid;
+    padding-top: 1.25rem;
 }
 
 .footer-social-list li {
-  margin: 0.5rem;
-  font-size: 1.25rem;
+    margin: 0.5rem;
+    font-size: 1.25rem;
 }
 
 .footer-social-icons {
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  padding: 8px;
-  background: pink;
-  color: hotpink;
-  text-align: center;
-  font: 32px Arial, sans-serif;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    background: pink;
+    color: hotpink;
+    text-align: center;
+    font: 32px Arial, sans-serif;
 }
 
 .footer-legal {
-  padding: 0.9375rem 1.875rem;
-  color: pink;
+    padding: 0.9375rem 1.875rem;
+    color: pink;
 }
+
 .footer-legal-list {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
+
 .footer-legal-list li {
-  margin: 0.125rem 0.625rem;
-  white-space: nowrap;
+    margin: 0.125rem 0.625rem;
+    white-space: nowrap;
 }
 
 .footer-legal-list li:nth-last-child(2) {
     flex: 1;
 }
-
