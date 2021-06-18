@@ -41,21 +41,23 @@ export const Navbar = () => {
   return (
     <nav>
       <div className="nav-wrapper">
-        <div onClick={backClickHandler} className="button-wrapper rounded-md hover:animate-pulse text-purple-400 cursor-pointer">
-          <button className="button h-12">Go Back {"   "}
-            <FontAwesomeIcon icon={faBackward} size="lg" />
-          </button>
-        </div>
+        <Link to={location.pathname}>
+          <div onClick={backClickHandler} className="button-wrapper rounded-md hover:animate-pulse text-purple-400 cursor-pointer">
+            <button className="button">Go Back {"   "}
+              <FontAwesomeIcon icon={faBackward} size="lg" />
+            </button>
+          </div>
+        </Link>
         <Link to="/">
           <div className="button-wrapper rounded-md hover:animate-pulse text-purple-400 cursor-pointer">
-            <button className="button h-12">Home {"  "}
+            <button className="button">Home {"  "}
               <FontAwesomeIcon icon={faHome} size="lg" className="" />
             </button>
           </div>
         </Link>
         <Link to="/submission">
           <div className="button-wrapper rounded-md hover:animate-pulse text-purple-400 cursor-pointer">
-            <button className="button h-12">Add Person {"   "}
+            <button className="button">Add Person {"   "}
               <FontAwesomeIcon icon={faUserPlus} size="lg" />
             </button>
           </div>

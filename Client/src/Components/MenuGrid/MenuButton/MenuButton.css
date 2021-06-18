@@ -1,10 +1,8 @@
-.button-wrapper {
+.menu-button-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 144px;
-    max-width: 256px;
+    width: 256px;
     height: 32px;
     background-color: lightpink;
-    margin: 4px;
 }

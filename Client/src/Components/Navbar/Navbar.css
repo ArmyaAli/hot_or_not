@@ -17,23 +17,8 @@
     justify-content: center;
     flex-grow: 1;
     border: none;
-    color: pink;
-}
-
-@media only screen and (min-width: 29.8125rem
-/* 477px */
-
-) {
-    .nav-wrapper {
-        justify-content: space-evenly;
-    }
-}
-
-@media only screen and (min-width: 77.5rem
-/* 1240px */
-
-) {
-    .nav-wrapper {
-        justify-content: space-evenly;
-    }
+    align-items: center;
+    width: 256px;
+    height: 32px;
+    background-color: lightpink;
 }
