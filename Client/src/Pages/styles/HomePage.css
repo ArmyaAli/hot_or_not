@@ -12,8 +12,6 @@
     background-color: #B255AD;
 }
 
-<<<<<<< HEAD
-
 .banner-wrapper {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../Images/xQc-smile.jpg");
     height: 100%;
@@ -50,10 +48,9 @@
     .banner-wrapper {
         background-attachment: scroll;
     }
-    .content-wrapper{
+    .content-wrapper {
         height: 270px;
     }
-
     .category-heading {
         font-size: 48px;
     }
@@ -63,6 +60,8 @@
     .banner-title {
         font-weight: bold;
         font-size: 24px;
+    }
+}
 
 @media only screen and (max-width: 500px) {
     .category-heading {
